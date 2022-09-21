@@ -22,16 +22,14 @@ public class LoginTest{
 		hp=new HomePage(driver);
 		lp=new LoginPage(driver);
 		sp=new SearchPage(driver);
-	}
-	
+	}	
 	@Test(priority = 1)
 	public void validLogin() {
 		hp.clickSignIn();
 		lp.login("sonal@yopmail.com", "Smart@123");
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		Assert.assertTrue(hp.logoutisDisplayed());
-	}
-	
+	}	
 	@AfterTest
 	public void tearDown() {
 		driver.quit();
