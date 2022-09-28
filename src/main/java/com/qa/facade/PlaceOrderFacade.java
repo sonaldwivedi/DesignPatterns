@@ -16,7 +16,7 @@ public class PlaceOrderFacade {
 	public String placeOrder(WebDriver driver) throws InterruptedException {
 		lp=new LoginPage(driver);
 		System.out.println("lp: "+lp);
-		lp.login("sonal@yopmail.com", "Smart@123");
+		lp.login("<username>", "<password>");
 		hp=lp.clickHomeBtn(driver);
 		sp=hp.addToCartAndProceedToChkOut(0, driver);
 		ap=sp.proceedToCheckOut(driver);

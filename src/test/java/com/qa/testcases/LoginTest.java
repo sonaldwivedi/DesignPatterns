@@ -28,7 +28,7 @@ public class LoginTest{
 	@Test(priority = 1)
 	public void validLogin() {
 		hp.clickSignIn();
-		lp.login("sonal@yopmail.com", "Smart@123");
+		lp.login("<username>", "<password>");
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		Assert.assertTrue(hp.logoutisDisplayed());
 	}
