@@ -36,6 +36,11 @@ public class RegistrationPage {
 	@FindBy(css = "button#submitAccount")
 	private WebElement registerBtn;
 	
+	RegistrationPage(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+	
 	
 	public RegistrationPage selectFemaleTitle() {
 		System.out.println("driver; " +driver);
@@ -83,10 +88,6 @@ public class RegistrationPage {
 		return new HomePage(driver);
 	}
 	
-	RegistrationPage(WebDriver driver) {
-		this.driver=driver;
-		PageFactory.initElements(driver, this);
-	}
 
 	public static RegistrationPage using(WebDriver driver) {
 		return new RegistrationPage(driver);

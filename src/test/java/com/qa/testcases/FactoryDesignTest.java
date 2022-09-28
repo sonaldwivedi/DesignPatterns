@@ -1,6 +1,11 @@
 package com.qa.testcases;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,40 +18,47 @@ import com.qa.factory.DriverType;
 
 public class FactoryDesignTest {
 
-    DriverManager driverManager;
-    WebDriver driver;
+	DriverManager driverManager;
+	WebDriver driver;
 
-    @BeforeTest
-    public void beforeTest() {
-        driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
-    }
+	@BeforeTest
+	public void beforeTest() {
+		driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
+	}
 
-    @BeforeMethod
-    public void beforeMethod() {
-        driver = driverManager.getDriver();
-    }
+	@BeforeMethod
+	public void beforeMethod() {
+		driver = driverManager.getDriver();
+	}
 
-    @AfterMethod
-    public void afterMethod() {
-        driverManager.quitDriver();
-    }
 
-    @Test
-    public void verifyFacebook() {
-        driver.get("https://www.facebook.com/");
-        Assert.assertEquals("Facebook – log in or sign up", driver.getTitle());
-    }
+	@Test
+	public void verifyBStackDemoAddToCart() {
+		driver.get("https://bstackdemo.com/");
+		List<WebElement> addToCartBtns = driver.findElements(By.cssSelector("div.shelf-item__buy-btn"));
+		addToCartBtns.get(0).click();
+		WebElement chkoutbtn = driver.findElement(By.cssSelector("div.buy-btn"));
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		Assert.assertTrue(chkoutbtn.isDisplayed());
+	}
 
-    @Test
-    public void verifyLinkedIn() {
-        driver.get("https://www.linkedin.com/signup");
-        Assert.assertEquals("Sign Up | LinkedIn", driver.getTitle());
-    }
+	@Test
+	public void verifyBStackDemoTitle() {
+		driver.get("https://bstackdemo.com/");
+		Assert.assertEquals(driver.getTitle(), "StackDemo");
+	}
 
-    @Test
-    public void verifyGoogle() {
-        driver.get("https://www.google.com");
-        Assert.assertEquals("Google", driver.getTitle());
-    }
+	@Test
+	public void verifyBStackDemoLogo() {
+		driver.get("https://bstackdemo.com/");
+		WebElement logo = driver.findElement(By.cssSelector(" a.Navbar_logo__26S5Y"));
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Assert.assertTrue(logo.isDisplayed());
+	}
+	
+	@AfterMethod
+	public void afterMethod() {
+		driverManager.quitDriver();
+	}
 
 }
