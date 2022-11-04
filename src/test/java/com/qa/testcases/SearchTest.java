@@ -22,7 +22,7 @@ public class SearchTest {
 		sp=new SearchPage(driver);
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 1)
 	public void search() {
 		hp.search("dress");
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
