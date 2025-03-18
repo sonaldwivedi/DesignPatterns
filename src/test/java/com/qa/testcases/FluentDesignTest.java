@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import com.qa.fluent.HomePage;
 import com.qa.fluent.LoginPage;
 import com.qa.fluent.RegistrationPage;
+import java.time.Duration;
 
 public class FluentDesignTest {
 	WebDriver driver;
