@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import com.qa.POM.BaseClass;
 import com.qa.pages.HomePage;
 import com.qa.pages.SearchPage;
+import java.time.Duration;
 
 public class SearchTest {
 	WebDriver driver;
