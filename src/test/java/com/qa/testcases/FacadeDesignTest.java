@@ -6,10 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.qa.facade.PlaceOrderFacade;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FacadeDesignTest {
 	WebDriver driver;
