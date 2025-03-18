@@ -1,5 +1,4 @@
 package com.qa.testcases;
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -8,7 +7,6 @@ import org.testng.annotations.Test;
 import com.qa.fluent.HomePage;
 import com.qa.fluent.LoginPage;
 import com.qa.fluent.RegistrationPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FluentDesignTest {
 	WebDriver driver;
