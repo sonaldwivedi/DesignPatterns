@@ -15,7 +15,6 @@ public class FluentDesignTest {
 	
 	@BeforeTest
 	public void setUp() {
-		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		driver.get("http://automationpractice.com/index.php");
 	}
