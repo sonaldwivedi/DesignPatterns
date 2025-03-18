@@ -1,8 +1,7 @@
 package com.qa.testcases;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,7 +34,7 @@ public class FactoryDesignTest {
 		List<WebElement> addToCartBtns = driver.findElements(By.cssSelector("div.shelf-item__buy-btn"));
 		addToCartBtns.get(0).click();
 		WebElement chkoutbtn = driver.findElement(By.cssSelector("div.buy-btn"));
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		Assert.assertTrue(chkoutbtn.isDisplayed());
 	}
 
