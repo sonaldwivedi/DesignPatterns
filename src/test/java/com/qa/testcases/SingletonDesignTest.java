@@ -7,6 +7,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import com.qa.singleton.SingletonBaseClass;
+import java.time.Duration;
 
 public class SingletonDesignTest {
 	WebDriver driver1;
