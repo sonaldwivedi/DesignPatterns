@@ -26,7 +26,7 @@ public class FluentDesignTest {
 		
 		LoginPage.using(driver)
 		.enterEmailAndCreate("iloveselenium@yopmail.com");
-		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		RegistrationPage.using(driver)
 		.selectFemaleTitle()
 		.enterFirstName("Peter")
