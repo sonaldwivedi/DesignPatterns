@@ -31,7 +31,7 @@ public class SingletonDesignTest {
 		System.out.println("driver2: " + driver2);
 		driver2.get("https://bstackdemo.com/");
 		WebElement logo = driver2.findElement(By.cssSelector(" a.Navbar_logo__26S5Y"));
-		driver2.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver2.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		Assert.assertTrue(logo.isDisplayed());
 	}
 	
