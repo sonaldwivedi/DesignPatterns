@@ -24,7 +24,7 @@ public class SearchTest {
 	@Test(priority = 1)
 	public void search() {
 		hp.search("dress");
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		Assert.assertTrue(sp.getSearchName().contains("dress"));
 	}
 	
