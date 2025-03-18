@@ -17,7 +17,6 @@ public class FacadeDesignTest {
 
 	@BeforeTest
 	public void setUp() {
-		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get("http://automationpractice.com/index.php");
 		driver.manage().window().maximize();
