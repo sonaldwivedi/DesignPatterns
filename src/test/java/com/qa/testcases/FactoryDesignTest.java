@@ -48,7 +48,7 @@ public class FactoryDesignTest {
 	public void verifyBStackDemoLogo() {
 		driver.get("https://bstackdemo.com/");
 		WebElement logo = driver.findElement(By.cssSelector(" a.Navbar_logo__26S5Y"));
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		Assert.assertTrue(logo.isDisplayed());
 	}
 	
