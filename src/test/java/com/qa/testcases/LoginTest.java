@@ -8,6 +8,7 @@ import com.qa.POM.BaseClass;
 import com.qa.pages.HomePage;
 import com.qa.pages.LoginPage;
 import com.qa.pages.SearchPage;
+import java.time.Duration;
 
 public class LoginTest{
 	WebDriver driver;
